@@ -1,3 +1,16 @@
-<h1>
+<!--<h1>
   {{title}}
-</h1>
+</h1>-->
+<app-citylist [showcitylist]="showcitylist" [citylist]="citylist" [ngClass]="{'hiddenCity':showcitylist}" (selectedCity)="selectedCity($event)"></app-citylist>
+
+<div class="bus" [ngClass]="{'hiddenCity':!showcitylist}">
+  <div class="bustitle">欢迎使用公交查询系统</div>
+  <div class="currcity" (click)="changecity()">当前城市：{{current}}</div>
+  <input class="busnumber" placeholder="请输入您要查询的公交线路名称，如1路" name="busnumber" [(ngModel)]="busnumber" (keyup)="search(current,busnumber)">
+
+  <div class="buslist">
+    <div class="busitem" *ngFor="let bus of busdata;let i =index;">
+        {{bus.name}}
+    </div>
+  </div>
+</div>

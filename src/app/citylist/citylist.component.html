@@ -1,0 +1,4 @@
+<h1 class="citytitle">请选择所在城市</h1>
+<div class="citylist">
+  <div class="cityitem" *ngFor="let city of citylist;let i=index" (click)="citySelect(i)" [ngClass]="{'selected':current==i}">{{city}}</div>
+</div>

@@ -1,0 +1,32 @@
+export interface Listdata {
+  terminal_name:string;
+  front_spell:string;
+  line_id:string;
+  key_name:string;
+  time_desc:string;
+  front_name:string;
+  stationdes:Object[];
+  description:string;
+  start_time:string;
+  photo_folder:string;
+  gpsfile_id:string;
+  data_source:string;
+  total_price:string;
+  company:string;
+  speed:string;
+  length:string;
+  loop:string;
+  auto:string;
+  ic_card:string;
+  double_deck:string;
+  express_way:string;
+  status:string;
+  basic_price:string;
+  end_time:string;
+  air:string;
+  terminal_spell:string;
+  type:string;
+  paper_table_id:string;
+  name:string;
+  commutation_ticket:string;
+}

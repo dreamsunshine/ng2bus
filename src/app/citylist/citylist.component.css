@@ -1,0 +1,28 @@
+.citytitle{
+  text-align: center;
+  font-size: 16px;
+  line-height: 2;
+  color: #333;
+  font-weight: normal;
+}
+.citylist{
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 1.5;
+  background-color: #bfbfbf;
+}
+.cityitem{
+  position: relative;
+  padding: 12px 0 12px 24px; 
+}
+.cityitem.selected:before{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: green;
+  top: 17px;
+  left: 12px;
+}
