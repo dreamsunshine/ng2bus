@@ -18,7 +18,7 @@ export class AjaxdataService {
     params.set('city',options.city);
     params.set('format','json');
     params.set('callback','JSONP_CALLBACK');
-    return this.jsonp.get(dataurl,{search:params}).map((response)=>response.json().data[0].result).catch(this.handleError)
+    return this.jsonp.get(dataurl,{search:params}).map((response)=>response.json().data[0]).catch(this.handleError)
   }
 
   private handleError(error:Response|any){
