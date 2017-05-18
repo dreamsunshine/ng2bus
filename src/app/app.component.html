@@ -4,24 +4,28 @@
 <app-citylist [showcitylist]="showcitylist" [citylist]="citylist" [ngClass]="{'hiddenCity':showcitylist}" (selectedCity)="selectedCity($event)"></app-citylist>
 
 <div class="bus" [ngClass]="{'hiddenCity':!showcitylist}">
-  <div class="bustitle">欢迎使用公交查询系统</div>
-  <div class="currcity" (click)="changecity()">当前城市：{{current}}</div>
-  <input class="busnumber" placeholder="请输入您要查询的公交线路名称，如1路" name="busnumber" [(ngModel)]="busnumber" (keyup)="search(current,busnumber)">
+    <div class="bustitle">欢迎使用公交查询系统</div>
+    <div class="currcity" (click)="changecity()">当前城市：{{current}}</div>
+    <input class="busnumber" placeholder="请输入您要查询的公交线路名称，如1路" name="busnumber" [(ngModel)]="busnumber" (keyup)="search(current,busnumber)">
 
-  <div class="buslist">
-    <div [ngStyle]="{'display':(busdata!=undefined&&busdata.length==0)?'block':'none'}">没有您要查询的公交</div>
-    <div class="busitem" *ngFor="let bus of busdata;let i =index;" (click)="showdetail(i)">
-        <div class="busitem_NO">{{bus.key_name}}</div>
-        <div class="stations">
-          <div class="station_start">起点站：{{bus.front_name}}</div>
-          <div class="station_end">终点站：{{bus.terminal_name}}</div>
-        </div>
-        <div class="worktime">运行时间：{{bus.start_time|timesplit}}--{{bus.end_time|timesplit}}({{bus.status==1?'正常运营':'停止运营'}})</div>
-        <div class="busdetail" (click)="closebox($event)">
-          <div class="detailbox" (click)="subclosebox($event)"></div>
+    <div class="buslist">
+        <div [ngStyle]="{'display':(busdata!=undefined&&busdata.length==0)?'block':'none'}">没有您要查询的公交</div>
+        <div class="busitem" *ngFor="let bus of busdata;let i =index;" (click)="showdetail(i,$event)">
+            <div class="busitem_NO">{{bus.key_name}}</div>
+            <div class="stations">
+                <div class="station_start">起点站：{{bus.front_name}}</div>
+                <div class="station_end">终点站：{{bus.terminal_name}}</div>
+            </div>
+            <div class="worktime">运行时间：{{bus.start_time|timesplit}}--{{bus.end_time|timesplit}}({{bus.status==1?'正常运营':'停止运营'}})</div>
+            <div class="busprice">总票价：{{bus.total_price|price:2}}{{(bus.air==''||bus.air==0)?'':'（空调车）'}}</div>
+            <div class="busdetail" (click)="closebox($event)">
+                <div class="detailbox" (click)="subclosebox($event)">
+                    <div class="stationlist">
+                        <div class="title">运营路线：</div>
+                        <span *ngFor="let station of bus.stationdes;let j=index">{{station.name}}{{j<(bus.stationdes.length-1)?'-':''}}</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-  </div>
 </div>
-
-

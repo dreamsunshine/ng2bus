@@ -11,7 +11,8 @@ import {myRoute} from './mainrouter'
 import {Approot} from './app.root';
 import { TransferComponent } from './transfer/transfer.component';
 import { StationComponent } from './station/station.component';
-import { TimesplitPipe } from './timesplit.pipe'
+import { TimesplitPipe } from './timesplit.pipe';
+import { PricePipe } from './price.pipe'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TimesplitPipe } from './timesplit.pipe'
     Approot,
     TransferComponent,
     StationComponent,
-    TimesplitPipe
+    TimesplitPipe,
+    PricePipe
   ],
   imports: [
     BrowserModule,

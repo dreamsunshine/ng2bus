@@ -1,6 +1,70 @@
-.hiddenCity{
-  display: none;
+.hiddenCity {
+    display: none;
 }
-.bustitle{text-align: center;}
-.busnumber{display: inline-block;width: 100%;box-sizing: border-box;}
 
+.bustitle {
+    text-align: center;
+}
+
+.busnumber {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.busitem {
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+}
+
+.busitem+.busitem {
+    margin-top: 20px;
+}
+
+.busitem .busitem_NO {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.busitem .stations div,
+.busitem .worktime,
+.busitem .busprice {
+    line-height: 1.25;
+    font-size: 14px;
+    color: #444;
+}
+
+.busitem .busdetail {
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .75);
+}
+
+.busitem .busdetail .detailbox {
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 50px auto auto;
+    width: 290px;
+}
+
+.busitem .busdetail .stationlist .title {
+    font-size: 14px;
+    line-height: 1;
+    color: #444;
+}
+
+.busitem .busdetail .stationlist span {
+    font-size: 12px;
+    line-height: 1.25;
+    color: #333;
+}

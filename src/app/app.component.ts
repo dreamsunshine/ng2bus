@@ -50,8 +50,8 @@ export class AppComponent implements OnInit {
       .switchMap((params)=>this.ajaxdataService.ajaxdata(params.url,params.option))
       .subscribe(result=>this.busdata=result.result)
   }
-  showdetail(num:number){
+  showdetail(num:number,e:Event){
     let el=this.el.nativeElement;
-    console.log(num,el)
+    el.querySelectorAll('.busdetail')[num].style.display='block';
   }
 }
