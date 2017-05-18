@@ -13,7 +13,7 @@
 }
 
 .busitem {
-    margin-top: 40px;
+    margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
     padding: 10px;
@@ -43,10 +43,12 @@
 .busitem .busdetail {
     display: none;
     position: fixed;
-    width: 100%;
+    left: 0;
+    right: 0;
     top: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, .75);
+    z-index: 100;
 }
 
 .busitem .busdetail .detailbox {
@@ -67,4 +69,12 @@
     font-size: 12px;
     line-height: 1.25;
     color: #333;
+}
+
+.busitem .busdetail .stationlist span:nth-of-type(2n+1) {
+    color: #666;
+}
+
+.buslist {
+    margin-bottom: 40px;
 }

@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
       this.current=item;
     }
     this.showcitylist=true;
-    this.busnumber=='';
+    this.busnumber='';
   }
   search(current,busnumber){
     let url='http://127.0.0.1:3000/citybus';
@@ -53,5 +53,16 @@ export class AppComponent implements OnInit {
   showdetail(num:number,e:Event){
     let el=this.el.nativeElement;
     el.querySelectorAll('.busdetail')[num].style.display='block';
+  }
+  closebox(e:Event,num:number){
+    // if(window.event){
+    //   window.event.cancelBubble=true;
+    // }
+    e.stopPropagation();
+    e.srcElement.setAttribute('style','display:none');
+  }
+  subclosebox(e:Event,num:number){
+    e.stopPropagation();
+
   }
 }
